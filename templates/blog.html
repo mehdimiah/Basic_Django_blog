@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+        <h1>{{object.title}}</h1>
+        <!-- the object is the blog instance and displaying the title-->
+        <p>{{object.content}}</p>
+        <p>{{object.author}}</p>
+{% endblock content %}

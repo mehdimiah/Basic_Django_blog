@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel = "stylesheet" type ="text/css" href = "{% static 'css/translator.css' %}">
+<h1>Text Translator</h1>
+<div class = 'container'>
+<p> This translator will convert english to german, using the google python library</p>
+    <form action = "{% url 'translator_view' %}" method="post">
+        {% csrf_token %}
+        <div class = "row">
+            <div class = "col-sm-6 mt-3 left">
+                <textarea class="form-control" id="exampleTextarea" rows = "3" name = "my_textarea">{{original_text}}</textarea>                
+            </div>
+            <div class = "col-sm-6 mt-3 left">
+                <textarea class="form-control" id="exampleTextarea" rows = "3" >{{output_text}}</textarea>                
+            </div>
+            <div class = "col-sm-6 mt-3">
+                <input class = "btn btn-primary btn-sm float-right" type="submit" value = "submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

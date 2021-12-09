@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+textarea#exampleTextarea {
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: grey;
+}
+
+p {
+    position: relative;
+    top: 20px;
+}

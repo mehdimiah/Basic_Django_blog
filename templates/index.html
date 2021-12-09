@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+        
+        <div class = "container">
+        {% for post in post_list %}
+            <div class = "card text-white bg-dark mb-3">
+                <div class = "card-body">
+                    <h2 class = "card-title">
+                        {{post.title}}
+                    </h2>
+                    <p class = "card-text">
+                        {{post.content | slice:"300"}} <!-- slice is one of many django template filters-->
+                    </p>
+                    <p class = "card-text">
+                        Author: {{post.author | title}} <!-- title template makes author typecase -->
+                    </p>
+                    <a class = "btn btn-primary" href = "{% url 'blog_view' post.slug %} "> Read More</a> 
+                  
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock content %} <!-- the html between the content will be rendered into the base html-->
+        <!-- these are called template tags -->
+        <!-- post list is a view which is defined in views-->
